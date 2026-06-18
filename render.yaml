@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: cravecrew-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: PORT
+        value: 5000
+      - key: FRONTEND_URL
+        sync: false
